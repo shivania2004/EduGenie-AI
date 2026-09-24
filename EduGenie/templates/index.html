@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EduGenie AI</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 40px; }
+        .container { max-width: 600px; background: white; padding: 30px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1); margin: auto; }
+        h1 { color: #2c3e50; text-align: center; }
+        input, select, button { width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; }
+        button { background-color: #3498db; color: white; border: none; font-weight: bold; cursor: pointer; margin-top: 20px;}
+        button:hover { background-color: #2980b9; }
+        .result-box { margin-top: 30px; padding: 20px; background-color: #eaf2f8; border-left: 5px solid #3498db; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🧞‍♂️ EduGenie AI Assistant</h1>
+    <p>What would you like to learn about today?</p>
+    
+    <!-- The Form sends data to our FastAPI '/generate' route -->
+    <form action="/generate" method="post">
+        <label><b>Topic:</b></label>
+        <input type="text" name="topic" placeholder="e.g., Photosynthesis, The Solar System" required>
+        
+        <label><b>What should I do?</b></label>
+        <select name="action">
+            <option value="learn">Explain this topic</option>
+            <option value="quiz">Generate a Quiz</option>
+        </select>
+        
+        <button type="submit">Ask EduGenie</button>
+    </form>
+
+    <!-- Jinja2 logic: If 'result' exists, display this box -->
+    {% if result %}
+    <div class="result-box">
+        <h3>Results for: {{ topic }}</h3>
+        <!-- The 'safe' filter tells Jinja to render the HTML tags the AI generated -->
+        {{ result | safe }}
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
