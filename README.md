@@ -4,6 +4,8 @@ A Generative AI-powered educational assistant built with FastAPI and Google Gemi
 ## Team Members
 This project was developed for the Naan Mudhalvan / SmartInternz program by:
 
+* Team name: *BDU463LogicLegends*
+
 * **A. SIVATHARANI** - BDU46325054631804112017/ QUEENS COLLEGE OF ARTS AND SCIENCE FOR WOMEN
 * **K. SHANMUGAPRIYA** - BDU46325054631804112016/ QUEENS COLLEGE OF ARTS AND SCIENCE FOR WOMEN
 * **S. SRIDEVI** - BDU46325054631804112018/ QUEENS COLLEGE OF ARTS AND SCIENCE FOR WOMEN
